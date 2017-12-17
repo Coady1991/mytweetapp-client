@@ -6,7 +6,7 @@ export default class TweetService {
     let tweet = {
       tweet: text
     };
-    this.tweet.push(tweet);
+    this.tweets.push(tweet);
     console.log(tweet);
   }
 }
