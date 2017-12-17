@@ -1,17 +1,16 @@
 <template>
-  <section class="ui two column stackable grid basic segment">
 
-    <form submit.trigger="makeTweet()" class="ui form column stacked segment">
+  <form submit.trigger="makeTweet()" class="ui form stacked segment">
 
+    <h3 class="ui dividing header">Make a Tweet</h3>
       <div class="grouped inline fields">
-        <h3>Enter Tweet</h3>
         <div class="field">
           <textarea placeholder="What's on your mind?" maxlength="140" type="text" value.bind="tweet"></textarea>
         </div>
       </div>
       <button class="ui blue submit button">Tweet</button>
 
-    </form>
+  </form>
 
   </section>
 </template>
