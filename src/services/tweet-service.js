@@ -7,10 +7,12 @@ import {EventAggregator} from 'aurelia-event-aggregator';
 export default class TweetService {
 
   tweets = [];
+  users = [];
   posts = 0;
 
   constructor(data, ea) {
     this.tweets = data.tweets;
+    this.users = data.users;
     this.ea = ea;
   }
 
@@ -23,5 +25,25 @@ export default class TweetService {
     console.log(tweet);
     console.log('Posts so far ' + this.posts);
     this.ea.publish(new PostsUpdate(this.posts));
+  }
+
+  login(email, password) {
+    const status = {
+      success: false,
+      message: ''
+    };
+
+    if (this.users[email]) {
+      if (this.users[email].password === password) {
+        status.success = true;
+        status.message = 'logged in';
+      } else {
+        status.message = 'Incorrect password';
+      }
+    } else {
+      status.message = 'Unknown user';
+    }
+
+    return status;
   }
 }
