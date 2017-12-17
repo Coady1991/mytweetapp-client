@@ -1,0 +1,21 @@
+<template>
+  <section class="ui two column stackable grid basic segment">
+
+    <form submit.trigger="makeTweet()" class="ui form four wide column stacked segment">
+
+      <div class="grouped inline fields">
+        <h3>Enter Tweet</h3>
+        <div class="field">
+          <textarea placeholder="What's on your mind?" maxlength="140" type="text" value.bind="tweet"></textarea>
+        </div>
+      </div>
+      <button class="ui blue submit button">Tweet</button>
+
+    </form>
+
+    <aside class="ui wide twelve wide center aligned middle aligned column">
+      <img src="assets/images/tweet.jpg" class="ui medium image">
+    </aside>
+
+  </section>
+</template>
